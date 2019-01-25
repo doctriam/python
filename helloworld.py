@@ -1,5 +1,9 @@
 # AUTHOR:  Kenneth Haynie, Jr.
-# DESCRIPTION:  Walkthroughs of tutorials from learnpython.org
+# TITLE:  helloworld.py
+# VERSION:  1.0
+#   VERSION NOTES:  LearnPython.org tutorials through String Formatting; 
+#           created endproc() function to clean up and simplify the continue prompt
+# DESCRIPTION:  Walkthroughs of python tutorials from learnpython.org
 # EDITOR:  VIM 8.0.1453
 
 def endproc():
