@@ -1,4 +1,10 @@
+# AUTHOR:  Kenneth Haynie, Jr.
+# DESCRIPTION:  Walkthroughs of tutorials from learnpython.org
+# EDITOR:  VIM 8.0.1453
+
 def endproc():
+    # Function for prompting user input
+    # and deleting prompt after Enter is pressed 
     input("\nPress Enter to continue")
     CURSOR_UP='\x1b[1A'
     ERASE_LINE='\x1b[2K'
