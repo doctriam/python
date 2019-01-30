@@ -9,7 +9,6 @@
 ##############################################################################
 
 from PIL import Image
-from datetime import datetime, date, time
 
 # Load Image
 im=Image.open('test.jpg')
@@ -17,7 +16,7 @@ pix=im.load()
 print(im.size)
 
 # Edge Detection
-threshold = 40
+threshold = 20
 range1=1
 image1=im.copy()
 pix1=image1.load()
@@ -50,7 +49,6 @@ for x in range(0,im.size[0]):
              pix1[x,y]=(0,0,0)
 
 # Save Image
-now=datetime.now()
 filename='/home/kenny/GIT/python/Output/imageedge_' + \
-    now.strftime("%Y%m%d%H%M%S") + '.jpg'
+    str(threshold) + '.jpg'
 image1.save(filename)
