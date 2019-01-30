@@ -1,15 +1,15 @@
 # AUTHOR:  Kenneth Haynie, Jr.
 # TITLE:  helloworld.py
 # VERSION:  1.0
-#   VERSION NOTES:  LearnPython.org tutorials through String Formatting; 
-#           created endproc() function to clean up and simplify the continue prompt;
-#           comment changes for testing git/github
+#   VERSION NOTES:
+#     LearnPython.org tutorials through String Formatting;
+#     created endproc() function to clean up and simplify the continue prompt;
+#     comment changes for testing git/github
 # DESCRIPTION:  Walkthroughs of python tutorials from learnpython.org
 # EDITOR:  VIM 8.0.1453
 
 def endproc():
-    # Function for prompting user input
-    # and deleting prompt after Enter is pressed 
+    """Function for prompting user input and deleting prompt after Enter is pressed"""
     input("\nPress Enter to continue")
     CURSOR_UP='\x1b[1A'
     ERASE_LINE='\x1b[2K'
@@ -18,44 +18,52 @@ def endproc():
     sys.stdout.write(ERASE_LINE)
     return
 
-# Hello World
-print("Hello, World!")
-endproc()
+# # Hello World
+# print("Hello, World!")
+# endproc()
+# 
+# # Print variable
+# x=1
+# if x==1:
+#     print("x is equal to %s" % x)
+# endproc()
+# 
+# # Multiple assignments
+# a,b=3,4
+# print("Multiple variables assigned on one line")
+# print(a,b)
+# endproc()
+# 
+# # Lists
+# print("List of numbers 1,2,3 using individual prints")
+# mylist=[]
+# mylist.append(1)
+# mylist.append(2)
+# mylist.append(3)
+# print(mylist[0])
+# print(mylist[1])
+# print(mylist[2])
+# print("List of numbers 1,2,3 using a for statement")
+# for x in mylist:
+#     print(x)
+# endproc()
+# 
+# # Modulus
+# print("Remainder of 11/3")
+# modulus=11%3
+# print(modulus)
+# endproc()
+# 
+# # Exponents
+# print("Exponents")
+# cubed=4**3
+# print("4^3 = %s" % cubed)
+# endproc()
 
-# Print variable
-x=1
-if x==1:
-    print("x is equal to %s" % x)
-endproc()
-
-# Multiple assignments
-a,b=3,4
-print("Multiple variables assigned on one line")
-print(a,b)
-endproc()
-
-# Lists
-print("List of numbers 1,2,3 using individual prints")
-mylist=[]
-mylist.append(1)
-mylist.append(2)
-mylist.append(3)
-print(mylist[0])
-print(mylist[1])
-print(mylist[2])
-print("List of numbers 1,2,3 using a for statement")
-for x in mylist:
-    print(x)
-endproc()
-
-# Modulus
-print("Remainder of 11/3")
-modulus=11%3
-print(modulus)
-endproc()
-
-# Exponents
-print("Exponents")
-cubed=4**3
-print("4^3 = %s" % cubed)
-endproc()
+# Wrap lines
+t=[0,0,0,0,0,0,0,0,0]
+if t[0] < 1 and t[1] < 1 and t[2] < 1 and t[3] < 1 and t[4] < 1 and t[5] < 1 \
+   and t[6] < 1:
+    print("Yes")
+else:
+    print("No")
