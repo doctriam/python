@@ -1,9 +1,10 @@
 ##############################################################################
 # TITLE:  Image Convolution Tutorial
 # DESCRIPTION:  Examples from https://youtu.be/BQyMZ0caFbg by user M
-# VERSION:  0.5
+# VERSION:  1.0
 # VERSION NOTES:
-#     Gaussian works for all but outer edges; need to solve those
+#   Finished Gaussian blur of data array.  Added Gaussian blur, sharpening,
+#   and edge detection for 'test.jpg' image.
 # AUTHOR:  Kenny Haynie
 ##############################################################################
 
@@ -12,7 +13,7 @@ from PIL import Image
 
 # Basic Gaussian Blur (8:17)
 # - getPixelsData and basicGaussianBlurData performs a Gaussian blur
-# - of a 5x5 integer array
+# - on a 5x5 integer array
 def getPixelsData(pixelX, pixelY,  data, gaussian, finalList):
     # Create matrix of pixel values in kernel range
     kernelRange=1
@@ -92,8 +93,9 @@ def basicGaussianBlur():
     pix1=img1.load()
 
     # Create Gaussian kernel
-#    a,b,c=0.0625,0.125,0.25 # Uncomment for Gaussian blur
-    a,b,c=0,-1,5 # Uncomment for Gaussian sharpen
+    a,b,c=0.0625,0.125,0.25 # Uncomment for Gaussian blur
+#    a,b,c=0,-1,5 # Uncomment for Gaussian sharpen
+#    a,b,c=-1,-1,8 # Uncomment for edge detection
     kernel=array([[a,b,a],[b,c,b],[a,b,a]])
 
     # Create needed variables
@@ -145,8 +147,6 @@ def setPixels(pixelX, pixelY, width, height, pix, pix1, kernel):
     pixelMatrix=array(pixelList)
 
     pixelValue=sum(pixelMatrix*kernel)
-    print(pix1[pixelX,pixelY])
-    print(pixelValue)
     return pixelValue
 
 
