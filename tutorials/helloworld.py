@@ -67,3 +67,4 @@ if t[0] < 1 and t[1] < 1 and t[2] < 1 and t[3] < 1 and t[4] < 1 and t[5] < 1 \
     print("Yes")
 else:
     print("No")
+endproc()

@@ -1,17 +1,20 @@
 ##############################################################################
 # TITLE:  Image Test
 # DESCRIPTION:  Down-convert color range from full color to 8 colors
-# VERSION:  1.0
+# VERSION:  1.1
 # VERSION NOTES:
-#     ""
+#     Added show image at end at set file locations as variables
 # AUTHOR:  Kenny Haynie
 ##############################################################################
 
 from PIL import Image
 from datetime import datetime
 
+testImageLocation='TestImages/test-lola.jpg'
+saveLocation='Output/imageRGBredux'
+
 # Load Image
-im=Image.open('test.jpg')
+im=Image.open(testImageLocation)
 pix=im.load()
 print(im.size)
 
@@ -35,6 +38,6 @@ for x in range(0, im.size[0]-1):
 
 # Save Image
 now=datetime.now()
-filename='/home/kenny/GIT/python/Output/imagecolorredux'+\
-    now.strftime("%Y%m%d%H%M%S")+'.jpg'
+filename=str(saveLocation) + '_' + now.strftime("%Y%m%d%H%M%S")+'.jpg'
 im.save(filename)
+im.show()

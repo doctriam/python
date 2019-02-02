@@ -1,22 +1,25 @@
 ##############################################################################
 # TITLE:  Image Basic Edge Detection
 # DESCRIPTION:  Uses basic detection of color changes around an pixel that
-#               exist outside of a given threshold
-# VERSION:  1.0
+#               exist outside of a given threshold to detect edges
+# VERSION:  1.1
 # VERSION NOTES:
-#     ""
+#     Added user prompt for threshold
 # AUTHOR:  Kenny Haynie
 ##############################################################################
 
 from PIL import Image
 
+testImageLocation='TestImages/test-lola.jpg'
+saveImageLocation='Output/image_edge'
+threshold=int(input('Input a threshold value (5-80):'))
+
 # Load Image
-im=Image.open('test.jpg')
+im=Image.open(testImageLocation)
 pix=im.load()
 print(im.size)
 
 # Edge Detection
-threshold = 20
 range1=1
 image1=im.copy()
 pix1=image1.load()
@@ -49,6 +52,6 @@ for x in range(0,im.size[0]):
              pix1[x,y]=(0,0,0)
 
 # Save Image
-filename='/home/kenny/GIT/python/Output/imageedge_' + \
-    str(threshold) + '.jpg'
+filename=str(saveImageLocation) + '_' + str(threshold) + '.jpg'
 image1.save(filename)
+image1.show()
