@@ -38,7 +38,8 @@ def main_menu():
         options[menuOption]()
     else:
         sys.exit()
-    print(),print()
+    print()
+    print()
     main_menu()
 
 # Hello World
